@@ -10,6 +10,11 @@ Unity 물리엔진으로 만든 3관절 로봇 팔이 컨베이어로 들어오�
 
 자세한 설계·실험·분석은 [REPORT.md](REPORT.md)에 있다.
 
+![컨베이어 분류 시연](docs/images/demo.gif)
+
+전체 시연 영상(물체 30개 연속 분류, 30/30 성공): [docs/media/conveyor_demo.mp4](docs/media/conveyor_demo.mp4)  
+※ 이 영상은 Ticks Per Frame 2로 녹화해 실제보다 약 2.5배 빠르다. 1배속은 Unity의 `Real Time` 옵션으로 볼 수 있다.
+
 ![학습 곡선](docs/images/curves_pick.png)
 
 ## 구조
@@ -30,7 +35,8 @@ python/
   *.zip                학습된 모델 (arm_*: 도달, pick_sac: v1, pick_sac_v2: v2)
   logs/                학습 곡선 기록 (Monitor CSV)
   results.csv, pick_results.csv   평가 결과
-docs/images/           그래프
+docs/images/           그래프, 시연 장면
+docs/media/            시연 영상
 ```
 
 Unity는 물리와 "사실"(관절 각도, 위치, 잡힘 여부)만 보고한다. 상태·보상·종료 판정과 학습은 모두 Python이 한다. 둘은 `127.0.0.1:9999`에서 줄 단위 JSON으로 통신한다.

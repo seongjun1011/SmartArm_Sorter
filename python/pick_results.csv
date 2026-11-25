@@ -1,0 +1,3 @@
+name,episodes,place,wrong,lost,timeout,grabbed,mean_reward,mean_steps,mean_center_err
+pick_sac,20,20,0,0,0,20,29.50,29,0.09
+pick_sac_v2,20,20,0,0,0,20,32.63,26,0.03
